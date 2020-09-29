@@ -40,6 +40,34 @@ const engQuestions = () => {
         addMore();
     })
 }
+
+const internQuestions = () => {
+    inquirer.prompt([
+      {
+      type: "input",
+      name: "name",
+      message: "Intern's name?"
+      },
+      {
+      type: "input",
+      name: "id",
+      message: "Intern's ID?"
+      },
+      {
+      type: "input",
+      name: "email",
+      message: "Intern's email?"
+      },
+      {
+      type: "input",
+      name: "school",
+      message: "Intern's school?"
+      }
+      ]).then(answer => {
+          const intern = new Intern(answer.name, answer.id, answer.email, answer.school);
+          team.push(intern);
+          addMore();
+      })
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
